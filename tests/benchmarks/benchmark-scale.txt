@@ -1,0 +1,220 @@
+=================================
+insert keytype:uint32_t
+---------------------------------
+thread = 1
+seed = 1465269454816779189
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	5.54802 seconds
+Throughput: 5443203.941156 inserts/sec
+---------------------------------
+thread = 2
+seed = 1465269461420346882
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	3.24583 seconds
+Throughput: 9303928.237814 inserts/sec
+---------------------------------
+thread = 4
+seed = 1465269465736446179
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	2.43864 seconds
+Throughput: 12383516.413220 inserts/sec
+---------------------------------
+thread = 8
+seed = 1465269469227830097
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198984
+Time elapsed:	2.38209 seconds
+Throughput: 12677505.318854 inserts/sec
+=================================
+insert keytype:string
+---------------------------------
+thread = 1
+seed = 1465270483104251085
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	8.95667 seconds
+Throughput: 3371676.986540 inserts/sec
+---------------------------------
+thread = 2
+seed = 1465270450810428223
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	4.9664 seconds
+Throughput: 6080659.632732 inserts/sec
+---------------------------------
+thread = 4
+seed = 1465270419004957378
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	3.4179 seconds
+Throughput: 8835546.536364 inserts/sec
+---------------------------------
+thread = 8
+seed = 1465270340562508286
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198984
+Time elapsed:	2.29498 seconds
+Throughput: 13158724.833092 inserts/sec
+=================================
+read keytype:uint32_t
+---------------------------------
+thread = 1
+seed = 1465269528810205303
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	172350398
+Time elapsed:	10 seconds
+Throughput: 17235039.800000 reads/sec
+---------------------------------
+thread = 2
+seed = 1465269542816380102
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	352270965
+Time elapsed:	10 seconds
+Throughput: 35227096.500000 reads/sec
+---------------------------------
+thread = 4
+seed = 1465269555558882390
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	624034853
+Time elapsed:	10 seconds
+Throughput: 62403485.300000 reads/sec
+---------------------------------
+thread = 8
+seed = 1465269567812482183
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	725097774
+Time elapsed:	10 seconds
+Throughput: 72509777.400000 reads/sec
+=================================
+read keytype:string
+---------------------------------
+thread = 1
+seed = 1465269579785328661
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	49925105
+Time elapsed:	10 seconds
+Throughput: 4992510.500000 reads/sec
+---------------------------------
+thread = 2
+seed = 1465269623971715257
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	79717915
+Time elapsed:	10 seconds
+Throughput: 7971791.500000 reads/sec
+---------------------------------
+thread = 4
+seed = 1465269664393763838
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	123286713
+Time elapsed:	10 seconds
+Throughput: 12328671.300000 reads/sec
+---------------------------------
+thread = 8
+seed = 1465269703937655465
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	161475845
+Time elapsed:	10 seconds
+Throughput: 16147584.500000 reads/sec
+=================================
+read_insert keytype:uint32_t
+---------------------------------
+thread = 1
+seed = 1465269741671098405
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302018755
+Time elapsed:	27.4679 seconds
+Throughput: 10995341.140948 ops/sec
+---------------------------------
+thread = 2
+seed = 1465269770192170677
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302099545
+Time elapsed:	14.8581 seconds
+Throughput: 20332313.350967 ops/sec
+---------------------------------
+thread = 4
+seed = 1465269786119392901
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302069103
+Time elapsed:	10.4932 seconds
+Throughput: 28787192.191650 ops/sec
+---------------------------------
+thread = 8
+seed = 1465269797667052956
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302037542
+Time elapsed:	8.10641 seconds
+Throughput: 37259081.759209 ops/sec
+=================================
+read_insert keytype:string
+---------------------------------
+thread = 1
+seed = 1465270820645832206
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301987880
+Time elapsed:	75.2034 seconds
+Throughput: 4015612.156506 ops/sec
+---------------------------------
+thread = 2
+seed = 1465270752548657313
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301981640
+Time elapsed:	39.63 seconds
+Throughput: 7620024.896791 ops/sec
+---------------------------------
+thread = 4
+seed = 1465270701494009279
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301985918
+Time elapsed:	22.91 seconds
+Throughput: 13181388.687388 ops/sec
+---------------------------------
+thread = 8
+seed = 1465270655930091992
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302016135
+Time elapsed:	17.0172 seconds
+Throughput: 17747647.401763 ops/sec
