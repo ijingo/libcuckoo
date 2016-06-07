@@ -1,0 +1,192 @@
+=================================
+thread 1
+---------------
+insert keytype:uint32_t
+seed = 1465267418634511678
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	2.90546 seconds
+Throughput: 10393860.670791 inserts/sec
+---------------
+insert keytype:string
+seed = 1465267422710783188
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	8.91334 seconds
+Throughput: 3388067.186502 inserts/sec
+---------------
+read keytype:uint32_t
+seed = 1465267457707134999
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	474483125
+Time elapsed:	10 seconds
+Throughput: 47448312.500000 reads/sec
+---------------
+read keytype:string
+seed = 1465267472482861505
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	30677225
+Time elapsed:	10 seconds
+Throughput: 3067722.500000 reads/sec
+---------------
+read_insert keytype:uint32_t
+seed = 1465267522277981811
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301952737
+Time elapsed:	21.2684 seconds
+Throughput: 14197236.070743 ops/sec
+---------------
+read_insert keytype:string
+seed = 1465267544710557332
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302055349
+Time elapsed:	74.896 seconds
+Throughput: 4032995.029724 ops/sec
+=================================
+thread 2
+---------------
+insert keytype:uint32_t
+seed = 1465267644990378823
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	1.59554 seconds
+Throughput: 18927067.553720 inserts/sec
+---------------
+insert keytype:string
+seed = 1465267647756805618
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	4.81073 seconds
+Throughput: 6277428.396462 inserts/sec
+---------------
+read keytype:uint32_t
+seed = 1465267677542853690
+FATAL ERROR:	init_size == keys_per_thread * thread_num(0) is false on line 89
+---------------
+read keytype:string
+seed = 1465267681902309648
+FATAL ERROR:	init_size == keys_per_thread * thread_num(0) is false on line 89
+---------------
+read_insert keytype:uint32_t
+seed = 1465267702449579263
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302033950
+Time elapsed:	11.2735 seconds
+Throughput: 26791393.194545 ops/sec
+---------------
+read_insert keytype:string
+seed = 1465267714896539254
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301998341
+Time elapsed:	39.8299 seconds
+Throughput: 7582198.221392 ops/sec
+=================================
+thread 4
+---------------
+insert keytype:uint32_t
+seed = 1465267780586510917
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	1.14253 seconds
+Throughput: 26431680.568563 inserts/sec
+---------------
+insert keytype:string
+seed = 1465267782887149834
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198988
+Time elapsed:	2.85484 seconds
+Throughput: 10578160.690448 inserts/sec
+---------------
+read keytype:uint32_t
+seed = 1465267811348680887
+FATAL ERROR:	init_size == keys_per_thread * thread_num(0) is false on line 89
+---------------
+read keytype:string
+seed = 1465267814474201286
+FATAL ERROR:	init_size == keys_per_thread * thread_num(0) is false on line 89
+---------------
+read_insert keytype:uint32_t
+seed = 1465267832412256882
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301930709
+Time elapsed:	9.29004 seconds
+Throughput: 32500471.095876 ops/sec
+---------------
+read_insert keytype:string
+seed = 1465267842876890604
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301993431
+Time elapsed:	22.8164 seconds
+Throughput: 13235806.589629 ops/sec
+=================================
+thread 8
+---------------
+insert keytype:uint32_t
+seed = 1465267891497609848
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198984
+Time elapsed:	0.837573 seconds
+Throughput: 36055345.623605 inserts/sec
+---------------
+insert keytype:string
+seed = 1465267893512548567
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of inserts:	30198984
+Time elapsed:	2.53461 seconds
+Throughput: 11914633.121506 inserts/sec
+---------------
+read keytype:uint32_t
+seed = 1465267921134800321
+FATAL ERROR:	init_size == keys_per_thread * thread_num(0) is false on line 89
+---------------
+read keytype:string
+seed = 1465267923461727169
+FATAL ERROR:	init_size == keys_per_thread * thread_num(0) is false on line 89
+---------------
+read_insert keytype:uint32_t
+seed = 1465267940209359302
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	301973677
+Time elapsed:	5.45045 seconds
+Throughput: 55403449.697447 ops/sec
+---------------
+read_insert keytype:string
+seed = 1465267946821820091
+Table with capacity 33554432 prefilled to a load factor of 0%
+----------Results----------
+Final load factor:	90%
+Number of operations:	302010407
+Time elapsed:	17.1358 seconds
+Throughput: 17624490.089134 ops/sec

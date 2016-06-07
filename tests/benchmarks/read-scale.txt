@@ -1,0 +1,72 @@
+=================================
+thread 1
+---------------
+read keytype:uint32_t
+seed = 1465268206620224019
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	40265328
+Time elapsed:	10 seconds
+Throughput: 4026532.800000 reads/sec
+---------------
+read keytype:string
+seed = 1465268221274180545
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	0
+Time elapsed:	10 seconds
+Throughput: 0.000000 reads/sec
+=================================
+thread 2
+---------------
+read keytype:uint32_t
+seed = 1465268270968585259
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	59557286
+Time elapsed:	10 seconds
+Throughput: 5955728.600000 reads/sec
+---------------
+read keytype:string
+seed = 1465268285548083250
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	413640
+Time elapsed:	10 seconds
+Throughput: 41364.000000 reads/sec
+=================================
+thread 4
+---------------
+read keytype:uint32_t
+seed = 1465268331515474050
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	64458876
+Time elapsed:	10 seconds
+Throughput: 6445887.600000 reads/sec
+---------------
+read keytype:string
+seed = 1465268344956309316
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	1834886
+Time elapsed:	10 seconds
+Throughput: 183488.600000 reads/sec
+=================================
+thread 8
+---------------
+read keytype:uint32_t
+seed = 1465268386495910079
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	58026796
+Time elapsed:	10 seconds
+Throughput: 5802679.600000 reads/sec
+---------------
+read keytype:string
+seed = 1465268399206731322
+Table with capacity 33554432 prefilled to a load factor of 90%
+----------Results----------
+Number of reads:	3794052
+Time elapsed:	10 seconds
+Throughput: 379405.200000 reads/sec

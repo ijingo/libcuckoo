@@ -28,6 +28,6 @@ CC="$PTHREAD_CC"
 
 AX_CXX_COMPILE_STDCXX_11(,[mandatory])
 
-CXXFLAGS="$CXXFLAGS -Wall -Wextra -Wshadow"
+CXXFLAGS="$CXXFLAGS -Wall -Wextra -Wshadow --std=c++11"
 
 AC_OUTPUT
