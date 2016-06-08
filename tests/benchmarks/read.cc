@@ -76,17 +76,24 @@ class ReadEnvironment {
     // threads, giving each thread enough keys to insert
     std::vector<std::thread> threads;
     size_t keys_per_thread = numkeys * (load / 100.0) / thread_num;
-    for (size_t i = 0; i < thread_num; i++) {
+    if (use_cuckoo) {
+      for (size_t i = 0; i < thread_num; i++) {
+        threads.emplace_back(insert_thread<T>::func, std::ref(table),
+                             keys.begin() + i * keys_per_thread,
+                             keys.begin() + (i + 1) * keys_per_thread);
+      }
+      for (size_t i = 0; i < threads.size(); i++) {
+        threads[i].join();
+      }
+    } else {
       threads.emplace_back(insert_thread<T>::func, std::ref(table),
-                           keys.begin() + i * keys_per_thread,
-                           keys.begin() + (i + 1) * keys_per_thread);
-    }
-    for (size_t i = 0; i < threads.size(); i++) {
-      threads[i].join();
+                           keys.begin(),
+                           keys.begin() + keys_per_thread * thread_num);
+      threads[0].join();
     }
 
-    //init_size = table.size();
-    //ASSERT_TRUE(init_size == keys_per_thread * thread_num);
+    init_size = table.size();
+    ASSERT_TRUE(init_size == keys_per_thread * thread_num);
 
     std::cout << "Table with capacity " << numkeys
               << " prefilled to a load factor of " << load << "%" << std::endl;
@@ -110,12 +117,13 @@ void ReadThroughputTest(ReadEnvironment<T>* env) {
   // are in the table and the others to read the numkeys-init_size elements
   // that aren't in the table. We proportion the number of threads based on
   // the load factor.
-  const size_t first_threadnum = thread_num * (load / 100.0);
+  const size_t first_threadnum = (thread_num + 1) / 2;
   const size_t second_threadnum = thread_num - first_threadnum;
   const size_t in_keys_per_thread =
       (first_threadnum == 0) ? 0 : env->init_size / first_threadnum;
   const size_t out_keys_per_thread =
-      (env->numkeys - env->init_size) / second_threadnum;
+      (second_threadnum == 0) ? 0 : (env->numkeys - env->init_size) /
+                                        first_threadnum;
   for (size_t i = 0; i < first_threadnum; i++) {
     threads.emplace_back(read_thread<T>::func, std::ref(env->table),
                          env->keys.begin() + (i * in_keys_per_thread),
@@ -152,7 +160,7 @@ int main(int argc, char** argv) {
       "The load factor to fill the table up to before testing reads",
       "The number of seconds to run the test for",
       "The seed used by the random number generator"};
-  const char* flags[] = {"--use-strings"};
+  const char* flags[] = {"--use-strings", "--use-cuckoo"};
   bool* flag_vars[] = {&use_strings, &use_cuckoo};
   const char* flag_help[] = {
       "If set, the key type of the map will be std::string",
@@ -161,22 +169,29 @@ int main(int argc, char** argv) {
               sizeof(args) / sizeof(const char*), flags, flag_vars, flag_help,
               sizeof(flags) / sizeof(const char*));
 
+  std::cout << "Thread number is " << thread_num << std::endl;
   if (use_cuckoo) {
+    std::cout << "using cuckoohash_map" << std::endl;
     if (use_strings) {
+      std::cout << "KeyType is std::string" << std::endl;
       auto* env = new ReadEnvironment<cuckoohash_map<KeyType2, ValType>>;
       ReadThroughputTest(env);
       delete env;
     } else {
+      std::cout << "KeyType is uint32_t" << std::endl;
       auto* env = new ReadEnvironment<cuckoohash_map<KeyType, ValType>>;
       ReadThroughputTest(env);
       delete env;
     }
   } else {
+    std::cout << "using unordered_map" << std::endl;
     if (use_strings) {
+      std::cout << "KeyType is std::string" << std::endl;
       auto* env = new ReadEnvironment<std::unordered_map<KeyType2, ValType>>;
       ReadThroughputTest(env);
       delete env;
     } else {
+      std::cout << "KeyType is uint32_t" << std::endl;
       auto* env = new ReadEnvironment<std::unordered_map<KeyType, ValType>>;
       ReadThroughputTest(env);
       delete env;

@@ -169,22 +169,29 @@ int main(int argc, char** argv) {
     exit(1);
   }
 
+  std::cout << "Thread number is " << thread_num << std::endl;
   if (use_cuckoo) {
+    std::cout << "using cuckoohash_map" << std::endl;
     if (use_strings) {
+      std::cout << "KeyType is std::string" << std::endl;
       auto* env = new InsertEnvironment<cuckoohash_map<KeyType2, ValType>>;
       InsertThroughputTest(env);
       delete env;
     } else {
+      std::cout << "KeyType is uint32_t" << std::endl;
       auto* env = new InsertEnvironment<cuckoohash_map<KeyType, ValType>>;
       InsertThroughputTest(env);
       delete env;
     }
   } else {
+    std::cout << "using unordered_map" << std::endl;
     if (use_strings) {
+      std::cout << "KeyType is std::string" << std::endl;
       auto* env = new InsertEnvironment<std::unordered_map<KeyType2, ValType>>;
       InsertThroughputTest(env);
       delete env;
     } else {
+      std::cout << "KeyType is uint32_t" << std::endl;
       auto* env = new InsertEnvironment<std::unordered_map<KeyType, ValType>>;
       InsertThroughputTest(env);
       delete env;

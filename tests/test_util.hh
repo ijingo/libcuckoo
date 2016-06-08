@@ -10,6 +10,7 @@
 #include <mutex>
 #include <random>
 #include <unordered_map>
+#include <assert.h>
 #include "../src/cuckoohash_map.hh"
 
 std::mutex print_lock;
@@ -238,7 +239,8 @@ class read_thread<std::unordered_map<std::string, uint32_t>> {
           counter.fetch_add(reads);
           return;
         }
-        if (table.find(*it) == table.end()) reads++;
+        ASSERT_EQ(in_table, table.count(*it) > 0);
+        reads++;
       }
     }
   }
@@ -262,7 +264,8 @@ class read_thread<std::unordered_map<uint32_t, uint32_t>> {
           counter.fetch_add(reads);
           return;
         }
-        if (table.find(*it) == table.end()) reads++;
+        ASSERT_EQ(in_table, table.count(*it) > 0);
+        reads++;
       }
     }
   }
@@ -324,7 +327,7 @@ class read_insert_thread<std::unordered_map<std::string, uint32_t>> {
         ++inserter_it;
       } else {
         // Do a read
-        table.find(*reader_it);
+        ASSERT_EQ(table.count(*reader_it) > 0, reader_it < inserter_it);
         ++reader_it;
         if (reader_it == end) {
           reader_it = begin;
@@ -357,7 +360,7 @@ class read_insert_thread<std::unordered_map<uint32_t, uint32_t>> {
         ++inserter_it;
       } else {
         // Do a read
-        table.find(*reader_it);
+        ASSERT_EQ(table.count(*reader_it) > 0, reader_it < inserter_it);
         ++reader_it;
         if (reader_it == end) {
           reader_it = begin;
