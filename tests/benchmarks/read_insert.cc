@@ -197,12 +197,14 @@ int main(int argc, char** argv) {
     std::cout << "using unordered_map" << std::endl;
     if (use_strings) {
       std::cout << "KeyType is std::string" << std::endl;
-      auto* env = new ReadInsertEnvironment<std::unordered_map<KeyType2, ValType>>;
+      auto* env =
+          new ReadInsertEnvironment<std::unordered_map<KeyType2, ValType>>;
       ReadInsertThroughputTest(env);
       delete env;
     } else {
       std::cout << "KeyType is uint32_t" << std::endl;
-      auto* env = new ReadInsertEnvironment<std::unordered_map<KeyType, ValType>>;
+      auto* env =
+          new ReadInsertEnvironment<std::unordered_map<KeyType, ValType>>;
       ReadInsertThroughputTest(env);
       delete env;
     }
